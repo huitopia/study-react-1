@@ -1,17 +1,17 @@
 import React from "react";
 
-function MyComponent(props) {
+function MyComp(props) {
+  console.log("name> ", props.name);
+  console.log("somProp> ", props.somProp); // props의 빈 값 true
+  console.log("otherProp> ", props.otherProp); // props가 없으면 undefined
   return <div></div>;
 }
+
 function App(props) {
-  // props 명명 규칙 lowerCamelCase 작성 ex) pageNumber
-  // 예약어 사용 불가 ex) let, class -> className, for -> htmlFor ...
   return (
     <div>
-      <p>Lorem ipsum dolor.</p>
-      <MyComponent number={3} pageNumber={2} />
+      <MyComp name={"son"} age={30} somProp />
     </div>
   );
 }
-
 export default App;
