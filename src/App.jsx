@@ -28,6 +28,26 @@ function App(props) {
   c.address.city = "seoul";
   console.log("c.address.city > ", c.address.city); // seoul
   console.log("a.address.city > ", a.address.city); // busan
+
+  // 연습
+  const d = {
+    company: {
+      name: "apple",
+      location: "us",
+    },
+    name: "iphone",
+    price: 300,
+  };
+  const { ...e } = d;
+  const { ...copyCompany } = d.company;
+  e.company = copyCompany;
+  e.name = "galaxy";
+  console.log("d.name > ", d.name); // iphone
+  console.log("e.name > ", e.name); // galaxy
+  e.company.name = "samsung";
+  console.log("d.company.name > ", d.company.name); // apple
+  console.log("e.company.name > ", e.company.name); // samsung
+
   return <div></div>;
 }
 
