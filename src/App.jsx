@@ -1,24 +1,15 @@
 import React from "react";
 
-function MyComp(props) {
+function MyComponent(props) {
   return <div></div>;
 }
-
 function App(props) {
+  // props 명명 규칙 lowerCamelCase 작성 ex) pageNumber
+  // 예약어 사용 불가 ex) let, class -> className, for -> htmlFor ...
   return (
     <div>
-      {/* props의 값 타입은 js 값 타입이며 String만 중괄호 생략 가능 */}
-      <MyComp
-        name="son"
-        age={3.14}
-        address={{ city: "seoul", country: "USA" }}
-        foods={["pizza", "coffee"]}
-        married={true}
-        action={function () {
-          alert("hi");
-        }}
-        someAction={() => alert("hello")}
-      />
+      <p>Lorem ipsum dolor.</p>
+      <MyComponent number={3} pageNumber={2} />
     </div>
   );
 }
