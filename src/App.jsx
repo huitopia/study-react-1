@@ -1,26 +1,7 @@
-import React, { useState } from "react";
-
-function MyCounter() {
-  const [count, setCount] = useState(0);
-  function upCount() {
-    setCount(count + 1);
-  }
-  return (
-    <div>
-      <div>
-        <button onClick={upCount}>증가</button>
-        {count}
-      </div>
-    </div>
-  );
-}
+import React from "react";
 
 function App(props) {
-  return (
-    <div>
-      <MyCounter />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
