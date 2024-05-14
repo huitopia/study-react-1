@@ -13,6 +13,12 @@ function MyComp() {
   useEffect(() => {
     console.log("first render");
   }, []);
+  // 첫 번째 파라미터(함수)의 리턴은 unmount 될 때 실행
+  useEffect(() => {
+    return () => {
+      console.log("start method when unmount ");
+    };
+  }, []);
   const [count, setCount] = useState(0);
   return (
     <div>
