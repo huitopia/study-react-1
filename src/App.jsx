@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
+// step 1: create the context
+const MessageContext = createContext("");
 
 function MyBox({ message }) {
   return <div>{message}</div>;
 }
 
 function MySection({ message }) {
-  return (
-    <div>
-      <MyBox message={message} />
-    </div>
-  );
+  return <MyBox message={message} />;
 }
 
 function MyContainer({ message }) {
