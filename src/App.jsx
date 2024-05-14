@@ -15,7 +15,9 @@ function MySection() {
 function MyContainer() {
   return <MySection />;
 }
-
+// # context 과용하지 말 것
+// 1. prop 전달 부터 시작할 것
+// 2. 주로 theme, 현재 계정정보, routing 등에 사용됨
 function App(props) {
   const [message, setMessage] = useState();
   function handleMessage(event) {
