@@ -1,27 +1,7 @@
-import React, { useState } from "react";
-
-function MyBox({ count, setCount }) {
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1)}>Up</button>
-      <p>{count}</p>
-    </div>
-  );
-}
+import React from "react";
 
 function App(props) {
-  const [view, setView] = useState(true);
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <input
-        type="checkbox"
-        checked={view}
-        onChange={(e) => setView(e.target.checked)}
-      />
-      {view && <MyBox count={count} setCount={setCount} />}
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
