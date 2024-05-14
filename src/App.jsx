@@ -7,7 +7,7 @@ function MyComp() {
   // 두 번째 파라미터 : dependency(특정 순간)
   // 두 번째 파라미터가 존재하지 않을 때 : 렌더링 될 때 마다 실행
   useEffect(() => {
-    console.log("useEffect start");
+    console.log("re-render");
   });
   // 두 번째 파라미터에 빈 배열을 넣으면 initial rendering 때 실행
   useEffect(() => {
@@ -19,11 +19,30 @@ function MyComp() {
       console.log("start method when unmount ");
     };
   }, []);
+  const [text1, setText1] = useState();
+  const [text2, setText2] = useState();
+  // 두번째 파라미터(배열의 원소)
+  // 어떤 값(주로 state, dependency) 이 변경될 때
+  useEffect(() => {
+    console.log("text1 change");
+  }, [text1]);
+  useEffect(() => {
+    console.log("text2 change");
+  }, [text2]);
+  useEffect(() => {
+    console.log("text1, text2 change");
+  }, [text1, text2]);
   const [count, setCount] = useState(0);
   return (
     <div>
       hello comp
       <button onClick={() => setCount(count + 1)}>click {count}</button>
+      <div>
+        <input type="text" onChange={(e) => setText1(e.target.value)} />
+      </div>
+      <div>
+        <input type="text" onChange={(e) => setText2(e.target.value)} />
+      </div>
     </div>
   );
 }
