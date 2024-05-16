@@ -27,6 +27,14 @@ function App(props) {
     axios.get(`/api/someurl3?${params}`);
   }
 
+  function handleClickButton6() {
+    const params = new URLSearchParams({
+      name: "son",
+      age: 2,
+    });
+    axios.post(`/api/someurl3?${params}`);
+  }
+
   return (
     <div>
       <div>
@@ -39,6 +47,7 @@ function App(props) {
       </div>
       <div>
         <button onClick={handleClickButton5}>get query string</button>
+        <button onClick={handleClickButton6}>post data</button>
       </div>
     </div>
   );
