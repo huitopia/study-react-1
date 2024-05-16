@@ -11,12 +11,20 @@ function App(props) {
     axios.post("/api/someurl");
   }
 
-  function handleClickBtn1() {
+  function handleClickButton3() {
     axios.get("/api/someurl2");
   }
 
-  function handleClickBtn2() {
+  function handleClickButton4() {
     axios.post("api/someurl2");
+  }
+
+  function handleClickButton5() {
+    const params = new URLSearchParams();
+    params.append("id", 3);
+    params.append("name", "k");
+    params.append("email", "k@k.com");
+    axios.get(`/api/someurl3?${params}`);
   }
 
   return (
@@ -26,8 +34,11 @@ function App(props) {
         <button onClick={handleClickButton2}>post</button>
       </div>
       <div>
-        <button onClick={handleClickBtn1}>get2</button>
-        <button onClick={handleClickBtn2}>post2</button>
+        <button onClick={handleClickButton3}>get2</button>
+        <button onClick={handleClickButton4}>post2</button>
+      </div>
+      <div>
+        <button onClick={handleClickButton5}>get query string</button>
       </div>
     </div>
   );
