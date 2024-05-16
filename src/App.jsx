@@ -35,6 +35,22 @@ function App(props) {
     axios.post(`/api/someurl3?${params}`);
   }
 
+  function handleClickButton7() {
+    const params = new URLSearchParams({
+      age: 10,
+      job: "student",
+    });
+    axios.get(`/api/someurl4?${params}`);
+  }
+
+  function handleClickButton8() {
+    const params = new URLSearchParams({
+      id: 1,
+      name: "kim",
+    });
+    axios.post(`/api/someurl4?${params}`);
+  }
+
   return (
     <div>
       <div>
@@ -48,6 +64,10 @@ function App(props) {
       <div>
         <button onClick={handleClickButton5}>get query string</button>
         <button onClick={handleClickButton6}>post data</button>
+      </div>
+      <div>
+        <button onClick={handleClickButton7}>get query string</button>
+        <button onClick={handleClickButton8}>post data</button>
       </div>
     </div>
   );
