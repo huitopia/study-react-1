@@ -15,11 +15,19 @@ function App(props) {
     });
   }
 
+  function handleClick3() {
+    axios.get("/api/main42/sub3").then((res) => {
+      console.log(res.data.info);
+    });
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>응답 받기</button>
       <br />
       <button onClick={handleClick2}>res : {result}</button>
+      <br />
+      <button onClick={handleClick3}>ResponseBody</button>
     </div>
   );
 }
