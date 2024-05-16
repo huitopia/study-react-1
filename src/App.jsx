@@ -18,9 +18,21 @@ function App(props) {
     axios.post("/api/main41/sub5", data);
   }
 
+  function handleClick2() {
+    axios.post("/api/main41/sub6", { name: "chae", age: 7 });
+  }
+
+  function handleClick3() {
+    axios.post("/api/main41/sub7", { name: "chch", age: 27 });
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>json data request</button>
+      <br />
+      <button onClick={handleClick2}>json data request</button>
+      <br />
+      <button onClick={handleClick3}>json data request</button>
     </div>
   );
 }
