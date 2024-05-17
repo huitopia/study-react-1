@@ -18,6 +18,14 @@ const router = createBrowserRouter([
     path: "list",
     element: <BoardList />,
   },
+  {
+    path: "/board/write",
+    element: <div>board write</div>,
+  },
+  {
+    path: "/board/edit",
+    element: <div>board edit</div>,
+  },
 ]);
 function App(props) {
   return <RouterProvider router={router} />;
