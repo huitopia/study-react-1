@@ -1,5 +1,10 @@
 import React from "react";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Link,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 
 const SpringRoot = () => {
   return (
@@ -8,9 +13,19 @@ const SpringRoot = () => {
         style={{
           padding: "10px",
           backgroundColor: "#eee",
+          display: "flex",
+          gap: "10px",
         }}
       >
-        NavBar
+        <div>
+          <Link to="/spring/learn">Learn</Link>
+        </div>
+        <div>
+          <Link to="/spring/api">Api</Link>
+        </div>
+        <div>
+          <Link to="/spring/doc">Doc</Link>
+        </div>
       </div>
       <div style={{ marginTop: "20px" }}>
         <Outlet />
