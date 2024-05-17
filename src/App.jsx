@@ -19,12 +19,17 @@ const router = createBrowserRouter([
     element: <BoardList />,
   },
   {
-    path: "/board/write",
-    element: <div>board write</div>,
-  },
-  {
-    path: "/board/edit",
-    element: <div>board edit</div>,
+    path: "/board",
+    children: [
+      {
+        path: "write",
+        element: <div>board write</div>,
+      },
+      {
+        path: "edit",
+        element: <div>board edit</div>,
+      },
+    ],
   },
 ]);
 function App(props) {
