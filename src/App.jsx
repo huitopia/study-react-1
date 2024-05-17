@@ -40,6 +40,10 @@ const router = createBrowserRouter([
     element: <SpringRoot />,
     children: [
       {
+        index: true,
+        element: <div>spring main page</div>,
+      },
+      {
         path: "api",
         element: <div>api page</div>,
       },
