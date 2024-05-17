@@ -1,19 +1,22 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BoardAdd } from "./BoardAdd.jsx";
+import { BoardEdit } from "./BoardEdit.jsx";
+import { BoardList } from "./BoardList.jsx";
 
 // router
 const router = createBrowserRouter([
   {
     path: "/add",
-    element: <div>add page</div>,
+    element: <BoardAdd />,
   },
   {
     path: "/edit",
-    element: <div>edit page</div>,
+    element: <BoardEdit />,
   },
   {
     path: "list",
-    element: <div>list page</div>,
+    element: <BoardList />,
   },
 ]);
 function App(props) {
