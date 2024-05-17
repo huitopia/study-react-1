@@ -4,6 +4,7 @@ import {
   Link,
   Outlet,
   RouterProvider,
+  useSearchParams,
 } from "react-router-dom";
 
 const Root = () => {
@@ -12,6 +13,7 @@ const Root = () => {
       <div>
         <Link to="/">Home</Link>
         <Link to="/list">List</Link>
+        <Link to="/board">Board</Link>
       </div>
       <hr />
       <div>
@@ -24,11 +26,23 @@ const Root = () => {
 const BoardList = () => {
   return (
     <div>
-      <div>no 1</div>
-      <div>no 2</div>
-      <div>no 3</div>
+      <div>
+        <Link to="/board?id=1">no 1</Link>
+      </div>
+      <div>
+        <Link to="/board?id=2">no 2</Link>
+      </div>
+      <div>
+        <Link to="/board?id=3">no 3</Link>
+      </div>
     </div>
   );
+};
+
+const BoardView = () => {
+  // query string
+  const [params] = useSearchParams();
+  return <div>{params.get("id")}번 게시물 보기</div>;
 };
 
 const router = createBrowserRouter([
@@ -42,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: "board",
-        element: <div>Board Page</div>,
+        element: <BoardView />,
       },
       {
         path: "list",
