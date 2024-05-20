@@ -1,13 +1,12 @@
 import React from "react";
-import { Button, ChakraProvider } from "@chakra-ui/react";
-import { SunIcon } from "@chakra-ui/icons";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App(props) {
+  // use... : hook
+  // if / for 내에서 사용 X
   return (
     <ChakraProvider>
-      <div>
-        <Button leftIcon={<SunIcon />}>hi</Button>
-      </div>
+      <div></div>
     </ChakraProvider>
   );
 }
